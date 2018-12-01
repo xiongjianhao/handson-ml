@@ -13,3 +13,4 @@ def export_script_and_view(model, os_path, contents_manager):
     subprocess.check_call(["jupyter", "nbconvert", "--to", "html", file_name, "--output", export_name + "_view"], cwd=dir_name)
 
 c.FileContentsManager.post_save_hook = export_script_and_view
+c.NotebookApp.allow_remote_access = True
